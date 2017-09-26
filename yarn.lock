@@ -3444,6 +3444,12 @@ react-native-animatable@^1.2.3:
   dependencies:
     prop-types "^15.5.10"
 
+react-native-camera@^0.10.0:
+  version "0.10.0"
+  resolved "https://artifactory.secureserver.net/artifactory/api/npm/node-virt/react-native-camera/-/react-native-camera-0.10.0.tgz#5d973c9a8aab95f68aede395ba310eae0c3cecdd"
+  dependencies:
+    prop-types "^15.5.10"
+
 react-native-datepicker@^1.6.0:
   version "1.6.0"
   resolved "https://registry.npmjs.org/react-native-datepicker/-/react-native-datepicker-1.6.0.tgz#3a40dc9b112023c49d60ba2a0789d440b7e3d97c"

@@ -16,6 +16,7 @@ import { connect } from "react-redux";
 import * as appActions from "../state/actions";
 import { bindActionCreators } from "redux";
 import DatePicker from "react-native-datepicker";
+
 // import Toast from "react-native-simple-toast";
 
 const styles = StyleSheet.create({
@@ -147,11 +148,10 @@ export class NewContactsScreen extends React.Component {
   }
 
   render() {
-    const { goBack } = this.props.navigation;
     const { showDatePicker } = this.state;
     return (
       <ScrollView style={styles.container}>
-        <TouchableHighlight style={styles.button} onPress={() => goBack()}>
+        <TouchableHighlight style={styles.button} onPress={this.takePicture}>
           <Image style={{ width: 200, height: 200 }} source={profilePic} />
         </TouchableHighlight>
         <TextInput
