@@ -9,6 +9,9 @@ import { Provider } from "react-redux";
 import contacts from "./state/reducer";
 import thunk from "redux-thunk";
 import logger from "redux-logger";
+import { compose } from "redux";
+import { persistStore, autoRehydrate } from "redux-persist";
+import { AsyncStorage } from "react-native";
 
 const BasicApp = StackNavigator({
   Main: { screen: MainScreen },
@@ -17,7 +20,12 @@ const BasicApp = StackNavigator({
   DisplayList: { screen: DisplayList }
 });
 
-let store = createStore(contacts, applyMiddleware(thunk, logger));
+let store = createStore(
+  contacts,
+  global.__REDUX_STATE__,
+  compose(applyMiddleware(thunk, logger), autoRehydrate())
+);
+persistStore(store, { storage: AsyncStorage });
 
 export default class App extends Component {
   render() {

@@ -45,15 +45,6 @@ export default class Camera extends Component {
       .catch(err => console.error(err));
   };
 
-  switchCamera = () => {
-    var state = this.state;
-    state.cameraType =
-      state.cameraType === Camera.constants.Type.back
-        ? Camera.constants.Type.front
-        : Camera.constants.Type.back;
-    this.setState(state);
-  };
-
   render() {
     return (
       <View>
